@@ -9,7 +9,6 @@
     </style>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-
 </head>
 <body>
 <!-- Our web map and content will go here -->
@@ -18,21 +17,23 @@
   // 1. Create a map object.
   var mymap = L.map('map', {
     center: [47.542413, -122.224832],
-    zoom: 10,
-    maxZoom: 14,
+    zoom: 8,
+    maxZoom: 12,
     minZoom: 3,
     detectRetina: true // detect whether the sceen is high resolution or not.
   });
 
   // 2. Add a base map.
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(mymap);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	subdomains: 'abcd',
+	maxZoom: 12}).addTo(mymap);
 
   // 3. Add medical facilities to the map
   // Null variable that will hold cell tower data
   var med_fac = null;
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
   });
   // Add the cellTowers to the map.
   med_fac.addTo(mymap);
