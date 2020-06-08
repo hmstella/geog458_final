@@ -27,7 +27,7 @@
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	subdomains: 'abcd',
 	maxZoom: 15,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
   }).addTo(mymap);
 
   // 3. Add medical facilities to the map
@@ -50,7 +50,7 @@
   }).addTo(mymap);
 
   // create the neighboorhood layer
-  L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson").addTo(mymap); 
+  L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson").addTo(mymap);
 </script>
 </body>
 </html>
