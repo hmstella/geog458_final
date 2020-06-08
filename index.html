@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Facilities in King County (2018)</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+    <style>
+      html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff;}
+    </style>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+<!-- Our web map and content will go here -->
+<div id="map"></div>
+<script>
+  // 1. Create a map object.
+  var mymap = L.map('map', {
+    center: [47.542413, -122.224832],
+    zoom: 7,
+    maxZoom: 12,
+    minZoom: 3,
+    detectRetina: true // detect whether the sceen is high resolution or not.
+  });
+
+  // 2. Add a base map.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 12}).addTo(mymap);
+</script>
+</body>
+</html>
