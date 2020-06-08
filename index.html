@@ -27,23 +27,27 @@
   // 2. Add a base map.
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	subdomains: 'abcd',
-	maxZoom: 12}).addTo(mymap);
+	maxZoom: 12,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
+  }).addTo(mymap);
 
   // 3. Add medical facilities to the map
   // Null variable that will hold cell tower data
   var med_fac = null;
-  
+
+  var myIcon = L.divIcon({
+    html: '<i class="fa fa-hospital-o"></i>',
+    iconSize: [20, 20],
+    className: 'myDivIcon' // We don't want to use the default class
+  });
+
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
       pointToLayer: function(feature, latlng){
-        return L.marker(latlng,
-          icon:L.divIcon({html:'<i class= "fa fa-hospital-o"></i>',
-                          className: 'myDivIcon'}))
-      },
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
-  });
+        return L.marker(latlng, {icon: myIcon});
+      }
+  }).addTo(mymap);
   // Add the cellTowers to the map.
-  med_fac.addTo(mymap);
 </script>
 </body>
 </html>
