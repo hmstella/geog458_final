@@ -9,6 +9,7 @@
     </style>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
 </head>
 <body>
 <!-- Our web map and content will go here -->
@@ -24,9 +25,7 @@
   });
 
   // 2. Add a base map.
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-	subdomains: 'abcd',
-	maxZoom: 15}).addTo(mymap);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(mymap);
 
   // 3. Add medical facilities to the map
   // Null variable that will hold cell tower data
