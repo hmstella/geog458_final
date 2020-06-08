@@ -32,9 +32,7 @@
   var med_fac = null;
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-                    contributors &copy; <a href="https://carto.com/attributions">CARTO</a> |
-                    Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
   });
   // Add the cellTowers to the map.
   med_fac.addTo(mymap);
