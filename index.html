@@ -17,16 +17,16 @@
   // 1. Create a map object.
   var mymap = L.map('map', {
     center: [47.542413, -122.224832],
-    zoom: 12,
-    maxZoom: 17,
-    minZoom: 6,
+    zoom: 10,
+    maxZoom: 14,
+    minZoom: 3,
     detectRetina: true // detect whether the sceen is high resolution or not.
   });
 
   // 2. Add a base map.
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 	subdomains: 'abcd',
-	maxZoom: 19}).addTo(mymap);
+	maxZoom: 15}).addTo(mymap);
 
   // 3. Add medical facilities to the map
   // Null variable that will hold cell tower data
