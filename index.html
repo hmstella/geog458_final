@@ -8,6 +8,7 @@
       html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff;}
     </style>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 </head>
 <body>
 <!-- Our web map and content will go here -->
@@ -27,6 +28,16 @@
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 12}).addTo(mymap);
+
+  // 3. Add medical facilities to the map
+  // Null variable that will hold cell tower data
+  var med_fac = null;
+  // Get GeoJSON and put on it on the map when it loads
+  med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
+      attribution: 'Medical Facilities &copy; King County GIS Open Data| Made By Stella Joo'
+  });
+  // Add the cellTowers to the map.
+  med_fac.addTo(mymap);
 </script>
 </body>
 </html>
