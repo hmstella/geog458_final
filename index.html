@@ -9,6 +9,7 @@
     </style>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 </head>
 <body>
 <!-- Our web map and content will go here -->
@@ -33,6 +34,9 @@
   var med_fac = null;
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
+      pointToLayer: function(feature, latlng){
+        return L.marker(latlng, icon:L.divIcon({className: 'fa fa-hospital-o'}))
+      },
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
   });
   // Add the cellTowers to the map.
