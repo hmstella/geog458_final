@@ -25,7 +25,6 @@
 
   // 2. Add a base map.
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 12}).addTo(mymap);
 
@@ -34,7 +33,7 @@
   var med_fac = null;
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
-      attribution: 'Medical Facilities &copy; King County GIS Open Data| Made By Stella Joo'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Medical Facilities &copy; King County GIS Open Data | Made By Stella Joo'
   });
   // Add the cellTowers to the map.
   med_fac.addTo(mymap);
