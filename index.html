@@ -48,7 +48,9 @@
         return L.marker(latlng, {icon: myIcon});
       }
   }).addTo(mymap);
-  // Add the cellTowers to the map.
+
+  // create the neighboorhood layer
+  L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson").addTo(mymap); 
 </script>
 </body>
 </html>
