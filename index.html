@@ -35,14 +35,14 @@
   var med_fac = null;
 
   var myIcon = L.divIcon({
-    html: '<i class="fa fa-h-square" style="color:#3CB043"></i>',
+    html: '<i class="fa fa-h-square fa-lg" style="color:#3CB043"></i>',
     className: 'myDivIcon' // We don't want to use the default class
   });
 
   // Get GeoJSON and put on it on the map when it loads
   med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
       onEachFeature: function(feature, layer){
-        layer.bindPopup(feature.properties.NAME+"<br>"+feature.properties.ADDRESS+", "+feature.properties.ZIPCODE);
+        layer.bindPopup("Name: "feature.properties.NAME+"<br>"+"Address: "+feature.properties.ADDRESS+", "+feature.properties.ZIPCODE);
       },
       pointToLayer: function(feature, latlng){
         return L.marker(latlng, {icon: myIcon});
