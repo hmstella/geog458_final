@@ -7,10 +7,9 @@ var mymap = L.map('map', {
 });
 
 // 2. Add a base map.
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-subdomains: 'abcd',
-maxZoom: 15,
-attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+maxZoom: 18,
+attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
 }).addTo(mymap);
 
 // 3. Add medical facilities to the map
