@@ -52,7 +52,14 @@
   }).addTo(mymap);
 
   // 4. create the neighboorhood layer
-  L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson").addTo(mymap);
+  var neighborhood=null;
+  neighborhood= L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson",{
+    onEachFeature: function(feature,layer){
+      layer.bindPopup(feature.properties.NEIGHBORHO, {closeButton: false});
+      layer.on('mouseover', function(){layer.openPopup();});
+      layer.on('mouseout', function(){layer.closePopup();});
+    }
+  }).addTo(mymap);
 
   // // 5. Set function for color ramp
   // colors = chroma.scale('YlGn').colors(4);
