@@ -52,7 +52,7 @@
   }).addTo(mymap);
 
   // 5. Set function for color ramp
-  var colors = chroma.scale('RdBu').colors(5);
+  var colors = chroma.scale('Reds').colors(5);
 
   function setColor(count){
     var id = 0;
@@ -70,7 +70,6 @@
           fillColor: setColor(feature.properties.MED_COUNT),
           fillOpacity: 0.4,
           weight: 2,
-          opacity: 1,
           color: '#b4b4b4',
           dashArray: '4'
       };
