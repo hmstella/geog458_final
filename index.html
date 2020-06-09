@@ -55,7 +55,11 @@
   var neighborhood=null;
   neighborhood= L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson",{
     onEachFeature: function(feature,layer){
-      layer.bindPopup(feature.properties.NEIGHBORHO, {closeButton: false});
+      if (feature.properties.MED_COUNT > 0){
+        layer.bindPopup(feature.properties.NEIGHBORHO + "<br> Number of Facilities: "+feature.properties.MED_COUNT, {closeButton: false});
+      } else {
+        layer.bindPopup(feature.properties.NEIGHBORHO + "<br> NO Facilities found", {closeButton: false});
+      }
       layer.on('mouseover', function(){layer.openPopup();});
       layer.on('mouseout', function(){layer.closePopup();});
     }
