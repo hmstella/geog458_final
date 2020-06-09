@@ -92,10 +92,10 @@
   function setColor(count){
     var id = 0;
     if (count>4){id=4;}
-    else if (count>3 && count <=4){id=3;}
-    else if (count>2 && count<=3){id=2;}
-    else if (count>1 && count <=2){id=1;}
-    else {id=4;}
+    else if (count=3){id=3;}
+    else if (count=2){id=2;}
+    else if (count=1){id=1;}
+    else {id=0;}
     return colors[id];
   }
 
