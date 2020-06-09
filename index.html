@@ -52,15 +52,14 @@
   }).addTo(mymap);
 
   // 5. Set function for color ramp
-  var colors = chroma.scale('YlGn').colors(6);
+  var colors = chroma.scale('Greens').colors(5);
 
   function setColor(count){
     var id = 0;
-    if (count>5){id=1;}
-    else if (count>4 && count <=5){id=2;}
-    else if (count>3 && count <=4){id=3;}
-    else if (count>2 && count<=3){id=4;}
-    else if (count>1 && count <=2){id=5;}
+    if (count>4){id=1;}
+    else if (count>3 && count <=4){id=2;}
+    else if (count>2 && count<=3){id=3;}
+    else if (count>1 && count <=2){id=4;}
     else {id=0;}
     return colors[id];
   }
