@@ -57,14 +57,14 @@
   var mymap = L.map('map', {
     center: [47.605598, -122.333361],
     zoom: 12,
-    maxZoom: 20,
+    maxZoom: 16,
     minZoom: 3,
   });
 
   // 2. Add a base map.
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
-  attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	maxZoom: 16,
+  attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ | Medical Facilities &copy; <a href="https://gis-kingcounty.opendata.arcgis.com/">King County GIS Open Data</a> | Made By Stella Joo'
   }).addTo(mymap);
 
   // 3. Add medical facilities to the map
