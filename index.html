@@ -51,9 +51,36 @@
       }
   }).addTo(mymap);
 
+  // 5. Set function for color ramp
+  var colors = chroma.scale('YlGn').colors(6);
+
+  function setColor(count){
+    var id = 0;
+    if (count>5){id=1;}
+    else if (count>4 && count <=5){id=2;}
+    else if (count>3 && count <=4){id=3;}
+    else if (count>2 && count<=3){id=4;}
+    else if (count>1 && count <=2){id=5;}
+    else {id=0;}
+    return colors[id];
+  }
+
+  // 6. Set style function that sets fill color.md property equal to hospital density
+  function style(feature) {
+      return {
+          fillColor: setColor(feature.properties.MED_COUNT),
+          fillOpacity: 0.4,
+          weight: 2,
+          opacity: 1,
+          color: '#b4b4b4',
+          dashArray: '4'
+      };
+  }
+
   // 4. create the neighboorhood layer
   var neighborhood=null;
   neighborhood= L.geoJson.ajax("assets/Metro_Neighborhoods_in_King_County.geojson",{
+    style: style,
     onEachFeature: function(feature,layer){
       if (feature.properties.MED_COUNT > 0){
         layer.bindPopup(feature.properties.NEIGHBORHO + "<br> Number of Facilities: "+feature.properties.MED_COUNT, {closeButton: false});
@@ -65,7 +92,8 @@
     }
   }).addTo(mymap);
 
-  // 5. create leaflet control object for legend
+
+  // 7. create leaflet control object for legend
   var legend = L.control({position: 'topright'});
 
 </script>
