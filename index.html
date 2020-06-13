@@ -116,7 +116,7 @@
                 // 1. Create a map object.
                 var mymap = L.map('map', {
                   center: [47.605598, -122.333361],
-                  zoom: 12,
+                  zoom: 11,
                   maxZoom: 16,
                   minZoom: 3,
                 });
@@ -147,14 +147,14 @@
                 }).addTo(mymap);
 
                 // 5. Set function for color ramp
-                var colors = chroma.scale('Reds').colors(5);
+                var colors = ["#fee5d9","#fcae91","#fb6a4a","#de2d26","#a50f15"];
 
                 function setColor(count){
                   var id = 0;
-                  if (count>4){id=4;}
-                  else if (count=3){id=3;}
-                  else if (count=2){id=2;}
-                  else if (count=1){id=1;}
+                  if (count>3){id=4;}
+                  else if (count>2 && count <=3){id=3;}
+                  else if (count>1 && count <=2){id=2;}
+                  else if (count>0 && count <=1){id=1;}
                   else {id=0;}
                   return colors[id];
                 }
