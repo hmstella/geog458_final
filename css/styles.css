@@ -10307,9 +10307,9 @@ body {
 
 #map
 {
-    width: 80%;
-    position: relative;
-    height: 80%;
+    width: 100%;
+    position: absolute;
+    height: 600px;
     margin: 0;
     padding:0;
     border: 1px solid black;
