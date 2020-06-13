@@ -147,7 +147,7 @@
                 }).addTo(mymap);
 
                 // 5. Set function for color ramp
-                var colors = ["#fee5d9","#fcae91","#fb6a4a","#de2d26","#a50f15"];
+                var colors = chroma.scale('Reds').colors(5);;
 
                 function setColor(count){
                   var id = 0;
