@@ -4,6 +4,9 @@
 You can access the web map through <a href="https://hmstella.github.io/inequalities_of_hospitals">HERE</a> as well.
 
 ### :mega: Project Goal
+
+<img src="assets/img/capture.JPG">
+
 The goal of the project is to see the locations of medical facilities in King County. With the density of medical facilities at the level of neighborhoods, it can be deducted that the accessing hospitals is very dependent on the resident's location. It can be also referred that this uneven distribution may occur some social disparities in races, age groups, and incomes.
 
 ### :mag_right: Data sources
