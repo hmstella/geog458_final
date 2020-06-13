@@ -10308,7 +10308,7 @@ body {
 #map
 {
     width: 80%;
-    position: absolute;
+    position: relative;
     height: 80%;
     margin: 0;
     padding:0;
