@@ -24,6 +24,11 @@ Applied Libraries are...
 Web Services used are...
 - github (for uploading files and viewing the webpage)
 - ArcGIS Online (for the basemap)
+- startBootstrap (for the customized design of the web page)
 
 ### :clap: Acknowledgement
-Special thanks to Professor **Bo Zhao** who has been teaching GEOG 458 course for the Advanced GIS skills.
+>Special thanks to Professor **Bo Zhao** who has been teaching GEOG 458 course for the Advanced GIS skills.
+
+>startBootstrap's *grayscale* was used for making the web page.
+
+>Motivated by the <a href="https://www.thebalance.com/health-care-inequality-facts-types-effect-solution-4174842">article</a> by Kimberly Amadeo from *the balance* 
