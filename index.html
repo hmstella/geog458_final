@@ -137,6 +137,8 @@
                   className: 'myDivIcon' // We don't want to use the default class
                 });
 
+                var county = L.geoJson.ajax("assets/KingCounty.json").addTo(mymap);
+
                 // Get GeoJSON and put on it on the map when it loads
                 med_fac= L.geoJson.ajax("assets/Medical_Facilities.geojson",{
                     onEachFeature: function(feature, layer){
